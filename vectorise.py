@@ -12,7 +12,7 @@ db_location = "./chroma_db"
 add_documents = not os.path.exists(db_location)
 
 if add_documents:
-    print(f"[VECTORISE] Creating new vector store and adding {len(df)} documents...")
+    print(f"[VECTORISING] Creating new vector store and adding {len(df)} documents...")
     documents = []
     ids = []
 
@@ -33,9 +33,9 @@ vector_store = Chroma(
 
 if add_documents:
     vector_store.add_documents(documents=documents, ids=ids)
-    print(f"[VECTORISE] Successfully added {len(documents)} documents to vector store")
+    print(f"[VECTORISED] Successfully added {len(documents)} documents to vector store")
 else:
-    print(f"[VECTORISE] Loading existing vector store from {db_location}")
+    print(f"[VECTORISOR] Loading existing vector store from {db_location}")
 
 # Verify the collection has documents
 collection_count = vector_store._collection.count()
